@@ -1,0 +1,17 @@
+# mBERT Hindi-English configuration
+model:
+  name: "bert-base-multilingual-cased"
+  num_labels: 3
+
+training:
+  batch_size: 16
+  learning_rate: 2e-5
+  num_epochs: 10
+  max_length: 128
+
+data:
+  language_pair: "hi-en"
+  train_path: "data/raw/hi-en/train.json"
+  dev_path: "data/raw/hi-en/dev.json"
+  test_path: "data/raw/hi-en/test.json"
+

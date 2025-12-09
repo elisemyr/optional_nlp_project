@@ -1,0 +1,17 @@
+# BERT Spanish-English configuration
+model:
+  name: "bert-base-uncased"
+  num_labels: 3
+
+training:
+  batch_size: 16
+  learning_rate: 2e-5
+  num_epochs: 10
+  max_length: 128
+
+data:
+  language_pair: "es-en"
+  train_path: "data/raw/es-en/train.json"
+  dev_path: "data/raw/es-en/dev.json"
+  test_path: "data/raw/es-en/test.json"
+
