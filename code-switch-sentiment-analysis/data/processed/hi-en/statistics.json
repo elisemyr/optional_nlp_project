@@ -1,0 +1,59 @@
+{
+  "train": {
+    "total_examples": 2400,
+    "label_distribution": {
+      "neutral": 873,
+      "positive": 800,
+      "negative": 727
+    },
+    "avg_text_length": 130.10333333333332,
+    "avg_num_tokens": 26.17125,
+    "avg_cs_index": 0.10443277836555817,
+    "cs_index_std": 0.07451201679023269,
+    "cs_index_min": 0.0,
+    "cs_index_max": 0.42857142857142855,
+    "cs_density_bins": {
+      "low (0-0.3)": 2360,
+      "medium (0.3-0.6)": 40,
+      "high (0.6+)": 0
+    }
+  },
+  "validation": {
+    "total_examples": 3000,
+    "label_distribution": {
+      "neutral": 1128,
+      "positive": 982,
+      "negative": 890
+    },
+    "avg_text_length": 127.746,
+    "avg_num_tokens": 26.225666666666665,
+    "avg_cs_index": 0.10848569542673446,
+    "cs_index_std": 0.07596013330800394,
+    "cs_index_min": 0.0,
+    "cs_index_max": 0.45454545454545453,
+    "cs_density_bins": {
+      "low (0-0.3)": 2945,
+      "medium (0.3-0.6)": 55,
+      "high (0.6+)": 0
+    }
+  },
+  "test": {
+    "total_examples": 600,
+    "label_distribution": {
+      "neutral": 227,
+      "positive": 200,
+      "negative": 173
+    },
+    "avg_text_length": 129.38333333333333,
+    "avg_num_tokens": 25.928333333333335,
+    "avg_cs_index": 0.11101909990385034,
+    "cs_index_std": 0.08004983676067357,
+    "cs_index_min": 0.0,
+    "cs_index_max": 0.5,
+    "cs_density_bins": {
+      "low (0-0.3)": 585,
+      "medium (0.3-0.6)": 15,
+      "high (0.6+)": 0
+    }
+  }
+}

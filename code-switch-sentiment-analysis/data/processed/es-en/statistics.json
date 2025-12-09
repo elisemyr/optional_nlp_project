@@ -1,0 +1,57 @@
+{
+  "train": {
+    "total_examples": 12194,
+    "label_distribution": {
+      "positive": 6848,
+      "neutral": 3363,
+      "negative": 1983
+    },
+    "avg_text_length": 53.84467771034935,
+    "avg_num_tokens": 1.0,
+    "avg_cs_index": 0.0,
+    "cs_index_std": 0.0,
+    "cs_index_min": 0.0,
+    "cs_index_max": 0.0,
+    "cs_density_bins": {
+      "low (0-0.3)": 12194,
+      "medium (0.3-0.6)": 0,
+      "high (0.6+)": 0
+    }
+  },
+  "validation": {
+    "total_examples": 1859,
+    "label_distribution": {
+      "positive": 1037,
+      "neutral": 517,
+      "negative": 305
+    },
+    "avg_text_length": 54.108660570199035,
+    "avg_num_tokens": 1.0,
+    "avg_cs_index": 0.0,
+    "cs_index_std": 0.0,
+    "cs_index_min": 0.0,
+    "cs_index_max": 0.0,
+    "cs_density_bins": {
+      "low (0-0.3)": 1859,
+      "medium (0.3-0.6)": 0,
+      "high (0.6+)": 0
+    }
+  },
+  "test": {
+    "total_examples": 4736,
+    "label_distribution": {
+      "neutral": 4736
+    },
+    "avg_text_length": 52.9617820945946,
+    "avg_num_tokens": 1.0,
+    "avg_cs_index": 0.0,
+    "cs_index_std": 0.0,
+    "cs_index_min": 0.0,
+    "cs_index_max": 0.0,
+    "cs_density_bins": {
+      "low (0-0.3)": 4736,
+      "medium (0.3-0.6)": 0,
+      "high (0.6+)": 0
+    }
+  }
+}
