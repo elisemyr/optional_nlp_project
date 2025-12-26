@@ -14,3 +14,4 @@ tqdm>=4.66.0
 python-multipart>=0.0.6
 langid>=1.1.6
 accelerate>=0.26.0
+plotly>=5.17.0

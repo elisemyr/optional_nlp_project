@@ -1,57 +1,59 @@
 {
   "train": {
-    "total_examples": 12194,
+    "total_examples": 9755,
     "label_distribution": {
-      "positive": 6848,
-      "neutral": 3363,
-      "negative": 1983
+      "positive": 5478,
+      "neutral": 2690,
+      "negative": 1587
     },
-    "avg_text_length": 53.84467771034935,
-    "avg_num_tokens": 1.0,
-    "avg_cs_index": 0.0,
-    "cs_index_std": 0.0,
+    "avg_text_length": 74.7148129164531,
+    "avg_num_tokens": 15.165863659661712,
+    "avg_cs_index": 0.14628305432672856,
+    "cs_index_std": 0.13852342253946429,
     "cs_index_min": 0.0,
-    "cs_index_max": 0.0,
+    "cs_index_max": 1.0,
     "cs_density_bins": {
-      "low (0-0.3)": 12194,
-      "medium (0.3-0.6)": 0,
-      "high (0.6+)": 0
+      "low (0-0.3)": 8557,
+      "medium (0.3-0.6)": 1083,
+      "high (0.6+)": 115
     }
   },
   "validation": {
+    "total_examples": 2439,
+    "label_distribution": {
+      "positive": 1370,
+      "neutral": 673,
+      "negative": 396
+    },
+    "avg_text_length": 74.91471914719148,
+    "avg_num_tokens": 15.164821648216483,
+    "avg_cs_index": 0.1464885900103166,
+    "cs_index_std": 0.13953069803983195,
+    "cs_index_min": 0.0,
+    "cs_index_max": 1.0,
+    "cs_density_bins": {
+      "low (0-0.3)": 2140,
+      "medium (0.3-0.6)": 272,
+      "high (0.6+)": 27
+    }
+  },
+  "test": {
     "total_examples": 1859,
     "label_distribution": {
       "positive": 1037,
       "neutral": 517,
       "negative": 305
     },
-    "avg_text_length": 54.108660570199035,
-    "avg_num_tokens": 1.0,
-    "avg_cs_index": 0.0,
-    "cs_index_std": 0.0,
+    "avg_text_length": 74.89833243679398,
+    "avg_num_tokens": 15.01936525013448,
+    "avg_cs_index": 0.15565125511541533,
+    "cs_index_std": 0.13640792036325655,
     "cs_index_min": 0.0,
-    "cs_index_max": 0.0,
+    "cs_index_max": 1.0,
     "cs_density_bins": {
-      "low (0-0.3)": 1859,
-      "medium (0.3-0.6)": 0,
-      "high (0.6+)": 0
-    }
-  },
-  "test": {
-    "total_examples": 4736,
-    "label_distribution": {
-      "neutral": 4736
-    },
-    "avg_text_length": 52.9617820945946,
-    "avg_num_tokens": 1.0,
-    "avg_cs_index": 0.0,
-    "cs_index_std": 0.0,
-    "cs_index_min": 0.0,
-    "cs_index_max": 0.0,
-    "cs_density_bins": {
-      "low (0-0.3)": 4736,
-      "medium (0.3-0.6)": 0,
-      "high (0.6+)": 0
+      "low (0-0.3)": 1599,
+      "medium (0.3-0.6)": 245,
+      "high (0.6+)": 15
     }
   }
 }

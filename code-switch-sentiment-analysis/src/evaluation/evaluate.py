@@ -109,7 +109,7 @@ def evaluate_model(model_path: str, data_path: str, output_dir: str):
         target_names=label_names,
         digits=4
     )
-    print("\n Classification Report:")
+    print("\n📋 Classification Report:")
     print(report)
     
     # Confusion matrix
@@ -209,10 +209,10 @@ def evaluate_model(model_path: str, data_path: str, output_dir: str):
     
     predictions_path = f'{output_dir}/predictions.csv'
     predictions_df.to_csv(predictions_path, index=False)
-    print(f"Saved predictions to {predictions_path}")
+    print(f"✓ Saved predictions to {predictions_path}")
     
     print("\n" + "=" * 70)
-    print("EVALUATION COMPLETE!")
+    print("✅ EVALUATION COMPLETE!")
     print("=" * 70)
     
     return metrics

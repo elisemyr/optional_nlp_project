@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Large data files 
+data/raw/*.csv
+data/raw/*/*.csv
+data/processed/*.pkl
+data/processed/*/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Logs and results (generated at runtime)
+*.log
+logs/
+results/*/
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Documentation
+*.md
+docs/
+
+# Tests
+tests/
+*.pytest_cache/
+
+# Other
+*.zip
+*.tar.gz
+*.rar
+.DS_Store

@@ -22,7 +22,7 @@ class CodeMixedPreprocessor:
     
     def normalize_text(self, text: str) -> str:
         """
-        Normalize code-mixed text.
+        Normalize code-mixed text while preserving sentiment cues.
         
         Args:
             text: Raw text string
@@ -30,17 +30,25 @@ class CodeMixedPreprocessor:
         Returns:
             Normalized text
         """
-        # Lowercase
-        text = text.lower()
+        # Preserve original case for sentiment words (emojis, exclamation marks, etc.)
+        # Only lowercase for better tokenization, but keep some sentiment indicators
         
         # Replace URLs
         text = re.sub(r'http\S+|www.\S+', '<url>', text)
         
-        # Replace usernames/mentions
+        # Replace usernames/mentions (but keep structure)
         text = re.sub(r'@\w+', '<user>', text)
         
-        # Replace hashtags (keep the text, remove #)
-        text = re.sub(r'#(\w+)', r'\1', text)
+        # Keep hashtags but normalize (hashtags can carry sentiment)
+        # Don't remove # completely as it might be part of sentiment
+        text = re.sub(r'#(\w+)', r'#\1', text)
+        
+        # Normalize repeated characters (e.g., "sooo" -> "sooo" but limit to 3)
+        # This preserves emphasis which can indicate sentiment
+        text = re.sub(r'(.)\1{3,}', r'\1\1\1', text)
+        
+        # Lowercase for consistency (but after preserving structure)
+        text = text.lower()
         
         # Remove extra whitespace
         text = ' '.join(text.split())
@@ -92,16 +100,31 @@ class CodeMixedPreprocessor:
         # Normalize text
         text = self.normalize_text(example['text'])
         
-        # Map label to integer
-        label_name = example['label'].lower()
-        if label_name not in self.label_map:
-            # Handle label variations
-            if 'pos' in label_name:
-                label_name = 'positive'
-            elif 'neg' in label_name:
-                label_name = 'negative'
-            else:
-                label_name = 'neutral'
+        # Map label to integer with robust handling
+        label_value = example.get('label', 'neutral')
+        
+        # Handle different label formats
+        if isinstance(label_value, (int, float)):
+            # Handle numeric labels (0=positive, 1=negative, 2=neutral)
+            label_map_numeric = {0: 'positive', 1: 'negative', 2: 'neutral'}
+            label_name = label_map_numeric.get(int(label_value), 'neutral')
+        else:
+            # Handle string labels
+            label_name = str(label_value).lower().strip()
+            
+            # More robust label matching
+            if label_name not in self.label_map:
+                # Handle various label variations
+                if any(x in label_name for x in ['pos', 'good', 'happy', 'love', 'like', 'great', 'excellent']):
+                    label_name = 'positive'
+                elif any(x in label_name for x in ['neg', 'bad', 'hate', 'sad', 'angry', 'terrible', 'awful']):
+                    label_name = 'negative'
+                elif any(x in label_name for x in ['neu', 'none', 'mixed', 'other']):
+                    label_name = 'neutral'
+                else:
+                    # Default to neutral if unclear
+                    print(f"⚠️  Warning: Unknown label '{label_value}', defaulting to 'neutral'")
+                    label_name = 'neutral'
         
         label_id = self.label_map[label_name]
         

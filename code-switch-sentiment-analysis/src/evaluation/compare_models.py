@@ -27,10 +27,10 @@ def compare_models(output_dir='results/comparison'):
     models = {
         'XLM-R (es-en)': 'models/xlmr-es-en',
         'mBERT (es-en)': 'models/mbert-es-en',
-        'BERT (es-en)': 'models/bert-es-en',
+
         'XLM-R (hi-en)': 'models/xlmr-hi-en',
         'mBERT (hi-en)': 'models/mbert-hi-en',
-        'BERT (hi-en)': 'models/bert-hi-en',
+
     }
     
     # Collect results
@@ -97,9 +97,9 @@ def compare_models(output_dir='results/comparison'):
         ax.grid(axis='y', alpha=0.3)
         
         # Add value labels
-        for i, row in enumerate(df_es.itertuples()):
-            ax.text(i - width/2, row._3 + 0.02, f'{row._3:.3f}', ha='center', fontsize=9)
-            ax.text(i + width/2, row._4 + 0.02, f'{row._4:.3f}', ha='center', fontsize=9)
+        for i, row in enumerate(df_es.itertuples(index=False)):
+            ax.text(i - width/2, row[2] + 0.02, f'{row[2]:.3f}', ha='center', fontsize=9)
+            ax.text(i + width/2, row[3] + 0.02, f'{row[3]:.3f}', ha='center', fontsize=9)
     
     # Hindi-English
     df_hi = df[df['Language'] == 'Hindi-English']
@@ -121,9 +121,9 @@ def compare_models(output_dir='results/comparison'):
         ax.grid(axis='y', alpha=0.3)
         
         # Add value labels
-        for i, row in enumerate(df_hi.itertuples()):
-            ax.text(i - width/2, row._3 + 0.02, f'{row._3:.3f}', ha='center', fontsize=9)
-            ax.text(i + width/2, row._4 + 0.02, f'{row._4:.3f}', ha='center', fontsize=9)
+        for i, row in enumerate(df_hi.itertuples(index=False)):
+            ax.text(i - width/2, row[2] + 0.02, f'{row[2]:.3f}', ha='center', fontsize=9)
+            ax.text(i + width/2, row[3] + 0.02, f'{row[3]:.3f}', ha='center', fontsize=9)
     
     plt.tight_layout()
     plot_path = f'{output_dir}/model_comparison.png'

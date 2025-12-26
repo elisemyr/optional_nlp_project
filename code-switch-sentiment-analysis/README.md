@@ -1,19 +1,6 @@
 # Multi-Lingual Sentiment Analysis with Code-Switching
 
 ---
-
-## Overview
-
-Social media users frequently mix languages within a single text, a phenomenon known as code-switching. For example, bilingual Spanish-English speakers might write "Me encanta this movie! Best film ever 🔥" or Hindi-English speakers might post "Yeh phone bahut amazing hai!" This linguistic behavior is prevalent in multilingual communities but poses significant challenges for sentiment analysis systems trained exclusively on monolingual data.
-
-Standard sentiment analysis models fail on code-switched text because they cannot handle the morphological and syntactic patterns that emerge when languages are mixed. These models are typically trained on clean, monolingual corpora and lack the capability to process mixed-script text, transliterations, or language-specific sentiment expressions that span multiple languages.
-
-This project addresses these challenges by building a robust sentiment classification system capable of handling code-switching between Spanish-English and Hindi-English language pairs. We fine-tune state-of-the-art multilingual transformer models (mBERT and XLM-RoBERTa) and systematically compare their performance against monolingual baselines. Our work demonstrates that multilingual pre-trained models significantly outperform monolingual approaches, achieving F1 scores of 0.74 for Spanish-English and 0.72 for Hindi-English on the test sets.
-
-Beyond model development, we conduct comprehensive analyses to understand the linguistic phenomena that make certain language combinations more challenging. We implement token-level language identification to visualize mixing patterns and study the impact of code-switching density on model performance. Our findings reveal that performance degrades as code-switching density increases, with Hindi-English presenting greater challenges due to script mixing (Devanagari + Latin) and transliteration complexities. The project includes an interactive web demo supporting both language pairs, complete Docker deployment, and detailed error analysis categorizing failure modes across different code-switching patterns.
-
----
-
 ## Installation
 
 ### Prerequisites
@@ -693,8 +680,7 @@ code-switch-sentiment-analysis/
 ## Contact
 
 **Author**: Elise Deyris
-**Email**: [elisecal.deyris@student-cs.f]  
-**Institution**: [Your University]  
+**Email**: [elisecal.deyris@student-cs.fr]  
 **Course**: NLP, LLM, TextSemantic Course
 **Instructor**: Benjamin Dallard (benjamin.dallard@centralesupelec.fr)
 
